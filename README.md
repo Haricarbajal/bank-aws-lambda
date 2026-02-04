@@ -7,7 +7,11 @@
 ### Descripción
 
 Este proyecto implementa una función **AWS Lambda en Java** para el cálculo preciso de **cuotas mensuales de préstamos bancarios**.  
-A partir del monto del préstamo, la tasa de interés y el plazo en meses, aplica la fórmula estándar de amortización \((\text{Cuota} = \frac{P \cdot i}{1 - (1 + i)^{-n}})\) utilizando `BigDecimal` y `MathContext.DECIMAL128` para garantizar exactitud numérica en escenarios financieros reales.
+A partir del monto del préstamo, la tasa de interés y el plazo en meses, aplica la fórmula estándar de amortización 
+$$
+Cuota = \frac{P \cdot i}{1 - (1+i)^{-n}}
+$$
+utilizando `BigDecimal` y `MathContext.DECIMAL128` para garantizar exactitud numérica en escenarios financieros reales.
 
 La función expone un handler `LambdaBank` que recibe un `BankRequest` y devuelve un `BankResponse` con dos simulaciones:  
 - **Escenario estándar**: cuota calculada con la tasa de interés indicada.  
